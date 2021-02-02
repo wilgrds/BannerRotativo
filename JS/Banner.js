@@ -1,11 +1,25 @@
 window.load = slide(1);
+slide1();
 
 var numImg = 1; 
 
 function slide(n) {
     var todasImagens = 3;
     document.getElementById('imagens').style.backgroundImage = "url('img/Banner"+n+".jpg')"; 
-    botoes(n, todasImagens);   
+    botoes(n, todasImagens);
+    //slide1(n, 0);      
+}
+function slide1(){
+        document.getElementById('imagens').style.backgroundImage = "url('img/Banner"+1+".jpg')";
+        setTimeout("slide2()", 6000);
+}
+function slide2(){
+    document.getElementById('imagens').style.backgroundImage = "url('img/Banner"+2+".jpg')";
+    setTimeout("slide3()", 6000);
+}
+function slide3(){
+    document.getElementById('imagens').style.backgroundImage = "url('img/Banner"+3+".jpg')";
+    setTimeout("slide1()", 6000);
 }
 
 function volta() {
